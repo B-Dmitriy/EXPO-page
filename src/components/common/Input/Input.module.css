@@ -1,0 +1,24 @@
+.input__wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.input__wrapper::after {
+    content: '';
+    top: -15px;
+    left: 26px;
+    position: absolute;
+    padding: 11px;
+    border: 3px solid #73797C;
+    border-radius: 50%;
+}
+
+.input__circle::after {
+    content: '';
+    top: -9px;
+    left: 32px;
+    position: absolute;
+    display: inline-block;
+    border: #73797C 8px solid;
+    border-radius: 50%;
+}
