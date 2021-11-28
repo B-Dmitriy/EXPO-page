@@ -21,7 +21,7 @@ function App() {
     ])
 
     const setLineState = (id: number, answer: boolean[]) => {
-        setTableState(tableState.map((i: any) => i.id === id
+        setTableState(tableState.map( i => i.id === id
             ? {...i, answer: answer}
             : i)
         )

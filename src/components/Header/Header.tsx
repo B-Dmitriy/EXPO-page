@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./Header.module.css";
 import logo from "../../assets/img/logo.png";
+import HeaderDots from "./HeaderDots/HeaderDots";
 
 const Header = () => {
     return (
@@ -15,17 +16,7 @@ const Header = () => {
                 <div className={styles.header__selector_left}>C’est quoi le questionnaire d’intérêt ?</div>
                 <div className={styles.header__selector_center}>Quel métier est fait pour toi?</div>
                 <div className={styles.header__selector_right}>Planifie ta visite</div>
-                <div className={styles.header__selector_orange_dot}/>
-                <div className={styles.header__selector_red_dot}/>
-                <div className={styles.header__selector_brown_dot}/>
-                <div className={styles.header__selector_yellow_dot}/>
-                <div className={styles.header__selector_turquoise_dot}/>
-                <div className={styles.header__selector_blue_dot}/>
-                <div className={styles.header__selector_green_dot}/>
-                <div className={styles.header__selector_blue_secondDot}/>
-                <div className={styles.header__selector_turquoise_secondDot}/>
-                <div className={styles.header__selector_yellow_secondDot}/>
-                <div className={styles.header__selector_brown_secondDot}/>
+                <HeaderDots />
             </div>
 
             <h2 className={styles.header__title}>Bienvenue au questionnaire d’intérêt</h2>

@@ -1,4 +1,4 @@
-import styles from "../../Main/Main.module.css";
+import styles from "./TableItem.module.css";
 import Input from "../Input/Input";
 import React from "react";
 

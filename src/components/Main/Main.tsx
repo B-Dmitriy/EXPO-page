@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Main.module.css'
-import dotsStyles from './MainDots.module.css'
 import mascot from './../../assets/img/mascot.png'
 import poligon from './../../assets/img/polygon.png'
 import progressBar from './../../assets/img/progressBar.png'
 import TableItem from '../common/TableItem/TableItem';
-import { TTableStateItem } from '../../App';
+import {TTableStateItem} from '../../App';
+import MainDots from "./MainDots/MainDots";
 
 type TMainProps = {
     tableState: Array<TTableStateItem>
@@ -19,28 +19,22 @@ const Main: React.FC<TMainProps> = props => {
         setLineState
     } = props
 
+    const tableBody = tableState.map(i => {
+        return <TableItem key={i.id}
+                          id={i.id}
+                          question={i.question}
+                          answer={i.answer}
+                          setLineState={setLineState}
+        />
+    })
+
     return (
         <div className={styles.main__wrapper}>
             <div className={styles.main__mascotBlock}>
                 <div className={styles.main__mascotBlock_text}>Commençons à dessiner ton avenir!</div>
                 <img className={styles.main__mascotBlock_poligon} src={poligon} alt="poligon"/>
                 <img className={styles.main__mascotBlock_mascot} src={mascot} alt="mascot"/>
-                <div className={dotsStyles.main__turquoise_dot}/>
-                <div className={dotsStyles.main__yellow_dot}/>
-                <div className={dotsStyles.main__brown_dot}/>
-                <div className={dotsStyles.main__red_dot}/>
-                <div className={dotsStyles.main__orange_secondDot}/>
-                <div className={dotsStyles.main__green_dot}/>
-                <div className={dotsStyles.main__red_secondDot}/>
-                <div className={dotsStyles.main__brown_secondDot}/>
-                <div className={dotsStyles.main__yellow_secondDot}/>
-                <div className={dotsStyles.main__blue_secondDot}/>
-                <div className={dotsStyles.main__green_secondDot}/>
-                <div className={dotsStyles.main__orange_thirdDot}/>
-                <div className={dotsStyles.main__red_thirdDot}/>
-                <div className={dotsStyles.main__brown_thirdDot}/>
-                <div className={dotsStyles.main__yellow_thirdDot}/>
-                <div className={dotsStyles.main__blue_thirdDot}/>
+                <MainDots/>
             </div>
             <div className={styles.main__tableBlock}>
                 <table className={styles.main__table}>
@@ -54,16 +48,7 @@ const Main: React.FC<TMainProps> = props => {
                     </tr>
                     </thead>
                     <tbody>
-                    {
-                        tableState.map((i: any) => {
-                            return <TableItem key={i.id}
-                                              id={i.id}
-                                              question={i.question}
-                                              answer={i.answer}
-                                              setLineState={setLineState}
-                            />
-                        })
-                    }
+                        {tableBody}
                     </tbody>
                 </table>
                 <div className={styles.main__progressBar}>

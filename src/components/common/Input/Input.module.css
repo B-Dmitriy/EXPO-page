@@ -3,22 +3,22 @@
     cursor: pointer;
 }
 
-.input__wrapper::after {
-    content: '';
-    top: -15px;
-    left: 26px;
-    position: absolute;
+.input__circle {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
     padding: 11px;
+    background-color: inherit;
     border: 3px solid #73797C;
     border-radius: 50%;
 }
-
-.input__circle::after {
-    content: '';
-    top: -9px;
-    left: 32px;
+.input__selected {
+    top: 3px;
+    left: 3px;
     position: absolute;
-    display: inline-block;
-    border: #73797C 8px solid;
+    width: 16px;
+    height: 16px;
+    background-color: #73797C;
     border-radius: 50%;
 }

@@ -18,9 +18,11 @@ const Input: React.FC<TInputProps> = props => {
     return (
         <div className={styles.input__wrapper}
              onClick={()=>onChange(dataCell)}>
-            {
-                answer && <div className={styles.input__circle}></div>
-            }
+            <div className={styles.input__circle}>
+                {
+                    answer && <div className={styles.input__selected}/>
+                }
+            </div>
         </div>
     )
 }
