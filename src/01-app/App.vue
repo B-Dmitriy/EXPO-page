@@ -1,14 +1,12 @@
 <template>
   <h1>Work</h1>
   <app-button v-on:click="clickHandler">Click</app-button>
+  <app-button v-on:click="clickHandler" v-bind:view="'outline'">Click 2</app-button>
   <app-tag
       v-for="tag in this.tags"
       key="tag.id"
-      :id="tag.id"
-      :description="tag.description"
-      :title="tag.title"
-      :textColor="tag.textColor"
-      :bgColor="tag.bgColor"
+      :tag="tag"
+      @tag-click="onTagClick"
   />
 </template>
 
@@ -29,6 +27,9 @@ export default {
   methods: {
     clickHandler() {
       alert('click')
+    },
+    onTagClick(id) {
+      alert(`${id} click`)
     },
     fetchTags() {
       /** CORS ERROR */
